@@ -9,32 +9,27 @@ import { CartComponent } from './cart/cart.component';
 import { AboutComponent } from './about/about.component';
 import { ProductsnavComponent } from './productsnav/productsnav.component';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    ErrorComponent,
-    ProductsComponent,
-    CartComponent,
-    AboutComponent,
-    ProductsnavComponent,
-    NavbarComponent,
-    FooterComponent
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    AppRoutingModule
-  ],
-  providers: [
-    provideClientHydration(),
-    provideHttpClient(withFetch()) // Enable fetch API for HttpClient
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HomeComponent,
+        ErrorComponent,
+        ProductsComponent,
+        CartComponent,
+        AboutComponent,
+        ProductsnavComponent,
+        NavbarComponent,
+        FooterComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        FormsModule,
+        AppRoutingModule], providers: [
+        provideClientHydration(),
+        provideHttpClient(withFetch()) // Enable fetch API for HttpClient
+        ,
+        provideHttpClient(withInterceptorsFromDi())
+    ] })
 export class AppModule { }
