@@ -1,0 +1,32 @@
+<header>
+    <h1>{{headerText}}</h1>
+    <div class="search-container">
+        <select [(ngModel)]="searchBrand" (ngModelChange)="updateHeaderText()">
+            <option value="">All Brands</option>
+            <option *ngFor="let brand of uniqueBrands" [value]="brand">{{brand | titlecase}}</option>
+        </select>
+        <select [(ngModel)]="searchCategory" (ngModelChange)="updateHeaderText()">
+            <option value="">All Categories</option>
+            <option *ngFor="let category of uniqueCategories" [value]="category">{{category | titlecase}}</option>
+        </select>
+        <input [(ngModel)]="searchTitle" placeholder="Search by Product" (ngModelChange)="updateHeaderText()">
+        <input type="number" [(ngModel)]="minPrice" placeholder="Min Price" required
+            (ngModelChange)="updateHeaderText()">
+        <input type="number" [(ngModel)]="maxPrice" placeholder="Max Price" required
+            (ngModelChange)="updateHeaderText()">
+        <button (click)="clearFilters()">Clear Filters</button>
+    </div>
+</header>
+
+<section>
+    <div *ngFor="let product of filteredProducts" class="cards-container">
+        <img [src]="product.img" alt="Item-IMG">
+        <h3>{{product.title}}</h3>
+        <div class="price">
+            <p>{{product.price}} {{product.currency}}</p>
+            <p class="discount" *ngIf="hasDiscount(product)">{{product.beforeDiscount}} {{product.currency}}</p>
+        </div>
+        <p>Available: {{product.stock}}</p>
+        <button (click)="addToCart(product)">Add to Cart</button> <!-- Add click event -->
+    </div>
+</section>

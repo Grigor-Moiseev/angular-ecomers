@@ -1,0 +1,128 @@
+.cards-container {
+    width: 250px;
+    height: 350px;
+    border: 2px solid lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+.price {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.discount {
+    text-decoration: line-through rgba(255, 0, 0, 0.879);
+}
+
+.cards-container>img {
+    width: 200px;
+    height: 150px;
+    object-fit: scale-down;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+section {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    background-color: rebeccapurple;
+    color: white;
+    transition: 0.5s;
+}
+
+button:hover {
+    border-color: #D68B1A;
+    transition: 0.5s;
+    background-color: rgba(102, 51, 153, 0.811);
+}
+
+header {
+    margin: 50px 0px;
+    text-align: center;
+    position: sticky;
+    top: 200px;
+    z-index: 998;
+    background-color: white;
+    border-bottom: 2px solid lightgrey;
+}
+
+.search-container {
+    margin: 50px 0px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.search-container input,
+.search-container select {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid lightgray;
+    color: black;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 150px;
+}
+
+.search-container input:hover,
+.search-container select:hover {
+    border-color: #D68B1A;
+}
+
+.search-container input:focus,
+.search-container select:focus {
+    outline: none;
+    border-color: rebeccapurple;
+    box-shadow: 0 0 5px rgba(102, 51, 153, 0.5);
+}
+
+/* Remove arrows in number inputs */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Option styling - limited support in some browsers */
+option {
+    background-color: white;
+    color: black;
+    padding: 5px;
+}
+
+/* Hover effect for options - may have limited support */
+option:hover {
+    background-color: #f0f0f0;
+    color: black;
+}
+
+/* Specific styling for 'All Brands' and 'All Categories' options */
+option[value=""] {
+    font-style: italic;
+    color: gray;
+}
+

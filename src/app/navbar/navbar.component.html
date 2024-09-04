@@ -1,0 +1,22 @@
+<nav>
+  <div class="container-1">
+    <ul>
+      <li><a routerLink=""><img src="assets/img/logo.png" alt="logo"></a></li>
+      <li><a routerLink="/products" routerLinkActive="active">Products</a></li>
+      <!-- Display the total number of items in the cart -->
+      <li class="cart">
+        <p class="cart-items">{{ cartCount }}</p>
+        <a routerLink="/cart" routerLinkActive="active">Cart</a>
+      </li>
+      <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+    </ul>
+  </div>
+  <div class="container-2">
+    <ul>
+      <li>Follow US:</li>
+      <li><a href=""><i class="fa-brands fa-facebook-f"></i></a></li>
+      <li><a href=""><i class="fa-brands fa-youtube"></i></a></li>
+      <li><a href=""><i class="fa-brands fa-instagram"></i></a></li>
+    </ul>
+  </div>
+</nav>

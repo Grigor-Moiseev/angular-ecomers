@@ -1,0 +1,15 @@
+<header>
+    <h1>All Discounted Products</h1>
+</header>
+<section>
+    <div *ngFor="let product of discountedProducts" class="cards-container">
+        <img [src]="product.img" alt="Item-IMG">
+        <h3>{{product.title}}</h3>
+        <div class="price">
+            <p>{{product.price}} {{product.currency}}</p>
+            <p class="discount" *ngIf="hasDiscount(product)">{{product.beforeDiscount}} {{product.currency}}</p>
+        </div>
+        <p>Available: {{product.stock}}</p>
+        <button (click)="addToCart(product)">Add to Cart</button> <!-- Add click event -->
+    </div>
+</section>
