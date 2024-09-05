@@ -17,7 +17,7 @@
       <td>{{ item.quantity }}</td>
       <td>{{ item.price }} {{ item.currency }}</td>
       <td>{{ getTotalPrice(item) }} {{ item.currency }}</td>
-      <td><button (click)="deleteItem(item.id)">Delete</button></td>
+      <td><button (click)="deleteItem(item.id)"><i class="fa-solid fa-trash"></i></button></td>
     </tr>
   </tbody>
 </table>

@@ -36,18 +36,30 @@ export class CartComponent implements OnInit {
   }
 
   deleteItem(itemId: number) {
-    if (isPlatformBrowser(this.platformId)) {
-      this.cartService.removeFromCart(itemId);  // Remove item by id
-      this.cartItems = this.cartItems.filter(item => item.id !== itemId); // Remove item from local array
+    if (confirm("Are you sure you want to delete the item?")) {
+      if (isPlatformBrowser(this.platformId)) {
+        this.cartService.removeFromCart(itemId);  // Remove item by id
+        this.cartItems = this.cartItems.filter(item => item.id !== itemId); // Remove item from local array
+      }
     }
   }
 
   clearCart() {
-    if (isPlatformBrowser(this.platformId)) {
-      this.cartService.clearCart();  // Clear cart via service
-      this.loadCartItems(); // Re-fetch cart items
+    if (confirm("Are you sure you want to clear the cart?")) {
+      if (isPlatformBrowser(this.platformId)) {
+        this.cartService.clearCart();  // Clear cart via service
+        this.loadCartItems(); // Re-fetch cart items
+      }
     }
   }
+
+  clearCartBay() {
+      if (isPlatformBrowser(this.platformId)) {
+        this.cartService.clearCart();  // Clear cart via service
+        this.loadCartItems(); // Re-fetch cart items
+      }
+  }
+
 
   openPurchasePopup() {
     this.showPopup = true;
@@ -60,7 +72,6 @@ export class CartComponent implements OnInit {
   getTotalCartPrice(): number {
     return this.cartItems.reduce((total, item) => total + (item.price * item.quantity), 0);
   }
-  
 
   purchaseItems() {
     if (isPlatformBrowser(this.platformId)) {
@@ -68,12 +79,12 @@ export class CartComponent implements OnInit {
         items: this.cartItems,
         buyerDetails: this.purchaseDetails
       };
-  
+
       localStorage.setItem('purchasedItems', JSON.stringify(purchaseData));
-      this.clearCart();
+      this.clearCartBay();
       this.closePopup();
       alert('Purchase successful!');
-  
+
       // Redirect to the home page after the alert is closed
       this.router.navigate(['/']);
     }

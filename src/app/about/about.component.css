@@ -1,0 +1,45 @@
+/* Wrapper for carousel to fit the style */
+.ngb-carousel {
+    width: 100%;
+    max-width: 1000px; /* Adjust as needed */
+    margin: auto;
+    border: 2px solid lightgray; /* Match the card border style */
+    border-radius: 10px; /* Optional: Adds rounded corners */
+  }
+  
+  /* Styling for each slide in the carousel */
+  .picsum-img-wrapper {
+    width: 100%;
+    height: 400px; /* Adjust the height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 2px solid lightgray; /* Match the card border style */
+  }
+  
+  /* Image within each slide */
+  .picsum-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Changed from cover to ensure full fit */
+  }
+  
+  /* Styling for carousel captions */
+  .carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white; /* Ensure text is readable */
+    padding: 10px;
+    text-align: center; /* Center text */
+    border-top: 2px solid lightgray; /* Match the card border style */
+  }
+  
+  /* Optional: Add styling for carousel indicators and controls if needed */
+  .carousel-indicators li {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  

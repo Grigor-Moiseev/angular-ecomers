@@ -12,24 +12,31 @@ import { FormsModule } from '@angular/forms';
 import { provideHttpClient, withFetch, withInterceptorsFromDi } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'; // Import NgbModule for the carousel
 
-@NgModule({ declarations: [
-        AppComponent,
-        HomeComponent,
-        ErrorComponent,
-        ProductsComponent,
-        CartComponent,
-        AboutComponent,
-        ProductsnavComponent,
-        NavbarComponent,
-        FooterComponent
-    ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
-        FormsModule,
-        AppRoutingModule], providers: [
-        provideClientHydration(),
-        provideHttpClient(withFetch()) // Enable fetch API for HttpClient
-        ,
-        provideHttpClient(withInterceptorsFromDi())
-    ] })
+@NgModule({
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    ErrorComponent,
+    ProductsComponent,
+    CartComponent,
+    AboutComponent,
+    ProductsnavComponent,
+    NavbarComponent,
+    FooterComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    NgbModule  // Add NgbModule here
+  ],
+  providers: [
+    provideClientHydration(),
+    provideHttpClient(withFetch()),
+    provideHttpClient(withInterceptorsFromDi())
+  ],
+  bootstrap: [AppComponent]
+})
 export class AppModule { }
