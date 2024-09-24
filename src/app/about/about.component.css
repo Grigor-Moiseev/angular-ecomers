@@ -1,45 +1,115 @@
-/* Wrapper for carousel to fit the style */
-.ngb-carousel {
-    width: 100%;
-    max-width: 1000px; /* Adjust as needed */
-    margin: auto;
-    border: 2px solid lightgray; /* Match the card border style */
-    border-radius: 10px; /* Optional: Adds rounded corners */
-  }
-  
-  /* Styling for each slide in the carousel */
-  .picsum-img-wrapper {
-    width: 100%;
-    height: 400px; /* Adjust the height as needed */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 2px solid lightgray; /* Match the card border style */
-  }
-  
-  /* Image within each slide */
-  .picsum-img-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Changed from cover to ensure full fit */
-  }
-  
-  /* Styling for carousel captions */
-  .carousel-caption {
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white; /* Ensure text is readable */
-    padding: 10px;
-    text-align: center; /* Center text */
-    border-top: 2px solid lightgray; /* Match the card border style */
-  }
-  
-  /* Optional: Add styling for carousel indicators and controls if needed */
-  .carousel-indicators li {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .carousel-control-prev-icon,
-  .carousel-control-next-icon {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
+.custom-carousel {
+  display: flex;
+  flex-direction: column; 
+  position: relative;
+  width: 100%;
+  max-width: 1000px; 
+  margin: auto;
+  overflow: hidden;
+}
+
+h2{
+  text-align: center;
+  font-size: 32px;
+  margin: 100px 0px;
+}
+
+.carousel-wrapper {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  height: 400px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slide img {
+  max-width: 100%;
+  height: 300px;
+  object-fit: scale-down;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rebeccapurple;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+.carousel-indicators-wrapper {
+  display: flex;
+  justify-content: center; 
+  margin-top: 10px; 
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 10px;
+}
+
+.carousel-indicators span {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(102, 51, 153, 0.5); 
+  cursor: pointer;
+}
+
+.carousel-indicators span.active {
+  background-color: rebeccapurple; 
+}
+
+.main{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.map > iframe {
+  border: 2px solid rebeccapurple;
+  border-radius: 10px;
+  width: 450px;
+  height: 450px;
+}
+
+.maps{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  margin: 50px 0px;
+}
+
+.buttons > button{
+  width: 130px;
+  height: 45px;
+  border-radius: 20px;
+  color: white;
+  background-color: rebeccapurple;
+}

@@ -27,13 +27,11 @@
   <span>{{ getTotalCartPrice() }} {{ 'GEL' }}</span>
 </div>
 
-<!-- Buttons to clear cart and proceed to purchase -->
 <div class="cart-actions">
   <button (click)="clearCart()">Clear Cart</button>
   <button (click)="openPurchasePopup()">Purchase</button>
 </div>
 
-<!-- Purchase popup window -->
 <div class="popup" *ngIf="showPopup">
   <div class="popup-content">
     <h3>Purchase Details</h3>
